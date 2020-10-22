@@ -60,5 +60,25 @@ Step 2 : Find the co-variance of the A , let's say co-variance matrix as S.
 Step 3: Find the eigen values and eigen vectors for the co-variance matrix, S
 Step 4 : Find the dot product of the eigen vector and co-variance matrix , S
 
-Eigen Values - Gives us the percentange of variance of the features
+Eigen Values - Gives us the percentange of variance of the features.
 Eigen Vectors - Gives us the direction of the features .
+
+# T-SNE
+
+It is a popular method of exploring high-dimensional data and has become widespread in the world of machine learning. It was introduced by Maaten and Hinton in 2008. It is a very useful dimensionality reduction technique and fairly better than the other techniques mentioned above. It has a very amazing ability to create two-dimensional maps from high dimension data. It’s very easy to implement in python using sci-kit learn.
+
+## How does t-SNE work?
+The working of t-SNE requires very non-trivial mathematics and takes a significant effort to understand. What t-SNE roughly does is that it tries to preserve the distances in a neighborhood.
+Suppose we are reducing d-dimensional data into 2-dimensional data using t-SNE.
+From the above picture we can see that x2 and x3 are in the neighborhood of x1 [N(x1) = {x2, x3}] and x5 is in the neighborhood of x4 [N(x4) = {x5}].
+As t-SNE preserves the distances in a neighborhood,
+d(x1, x2) ≈ d(x’1, x’2)
+d(x1, x3) ≈ d(x’1, x’3)
+d(x4, x5) ≈ d(x’4, x’5)
+For every point, it constructs a notion of which other points are its ‘neighbors,’ trying to make all points have the same number of neighbors. Then it tries to embed them so that those points all have the same number of neighbors.
+
+## MNIST dataset
+MNIST is a computer vision dataset which contains images of the handwritten digits with each image being 28 pixels in height and 28 pixels in width, for a total of 784 pixels.
+
+Now we will be performingPCA and  t-SNE on this dataset with different values of hyperparameters.
+With perplexity 30 and n_iter = 1000 and taking only 1000 data points.
